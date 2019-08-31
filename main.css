@@ -1,0 +1,38 @@
+html {
+    text-align: center;
+}
+h1 {
+    font-size: 400%;
+    margin: 50px 50px 20px 50px;
+    font-family: Arial;
+    font-weight: normal;
+}
+
+table {
+    margin: 20px auto 20px auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 0px 15px;
+    width: 113px;
+}
+
+
+#rockImg {
+    position: relative;
+    top: -50px;
+}
+
+#scissorsImg {
+    position: relative;
+    top: -50px;
+}
+
+.clicked {
+    transform: scale(1.1);
+}
