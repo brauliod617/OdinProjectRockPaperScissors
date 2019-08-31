@@ -1,4 +1,3 @@
-
 const startButton = document.getElementById("startBtn");
 const rock = document.getElementById("rockImg");
 const paper = document.getElementById("paperImg");
@@ -17,8 +16,8 @@ let playerScore = 0, computerScore =0, roundNumber = 0;
 
 function startGame() {
     if(gameWindow.style.visibility === 'hidden'){
-        gameWindow.style.visibility = 'visible'
-        startButton.style.display = 'none'
+        gameWindow.style.visibility = 'visible';
+        startButton.style.display = 'none';
     }
     let results;
 
@@ -26,13 +25,10 @@ function startGame() {
     paper.addEventListener("click", clicked);
     scissors.addEventListener("click", clicked);
 
-    continueBtn.addEventListener('click', function (e) {
+    continueBtn.addEventListener('click', function () {
         results = playRound(userChoice, computerPlay());
         processResults(results);
     })
-
-
-
 }
 
 function processResults(results) {
@@ -70,7 +66,7 @@ function processResults(results) {
     }
 }
 
-function clicked(e){
+function clicked(){
     if(!this.classList.contains('clicked')){
         this.classList.add('clicked');
 
@@ -90,49 +86,47 @@ function clicked(e){
         gameWindow.removeChild(selection);
         gameWindow.removeChild(continueBtn);
     }
-
 }
 
 
 function playRound(playerSelection, computerSelection) {
     console.log(playerSelection);
-    if (playerSelection == "rockImg" && computerSelection == "Scissors") {
+    if (playerSelection === "rockImg" && computerSelection === "Scissors") {
         alert("You win! Rock Beats Scissors");
         return 0;
     }
-    if (playerSelection == "rockImg" && computerSelection == "Paper") {
+    if (playerSelection === "rockImg" && computerSelection === "Paper") {
         alert("You loose! Paper Beats Scissors");
         return 1;
     }
-    if (playerSelection == "rockImg" && computerSelection == "Rock") {
+    if (playerSelection === "rockImg" && computerSelection === "Rock") {
         alert("Tie, Rock vs Rock");
         return 2;
     }
-    if (playerSelection == "scissorsImg" && computerSelection == "Scissors") {
+    if (playerSelection === "scissorsImg" && computerSelection === "Scissors") {
         alert("Tie Scissors vs Scissors");
         return 2;
     }
-    if (playerSelection == "scissorsImg" && computerSelection == "Paper") {
+    if (playerSelection === "scissorsImg" && computerSelection === "Paper") {
         alert("You Win! Scissors Beats Paper");
         return 0;
     }
-    if (playerSelection == "scissorsImg" && computerSelection == "Rock") {
+    if (playerSelection === "scissorsImg" && computerSelection === "Rock") {
         alert("You loose, Rock beats Scissors");
         return 1;
     }
-    if (playerSelection == "paperImg" && computerSelection == "Scissors") {
+    if (playerSelection === "paperImg" && computerSelection === "Scissors") {
         alert("You loose! Scissors Beats Paper");
         return 1;
     }
-    if (playerSelection == "paperImg" && computerSelection == "Paper") {
+    if (playerSelection === "paperImg" && computerSelection === "Paper") {
         alert("Tie, Paper vs Paper");
         return 2;
     }
-    if (playerSelection == "paperImg" && computerSelection == "Rock") {
+    if (playerSelection === "paperImg" && computerSelection === "Rock") {
         alert("You win! Paper beats Rock");
         return 0;
     }
-
     return "error";
 }
 
@@ -146,7 +140,7 @@ function computerPlay(){
         case 3:
             return "Scissors";
         default:
-            return "Machine Gun";
+            return "Machine Gun"; //this should never happen :)
     }
 }
 
